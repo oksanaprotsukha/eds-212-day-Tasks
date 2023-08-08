@@ -29,4 +29,44 @@ a <- 1.2
 eval(fx)
 ```
 
-## 
+## ggplot
+
+-   In a new code chunk, create a `ggplot` graph of penguin bill length versus bill depth (using the `penguins` dataset in the `palmerpenguins` package), with point color dependent on species. You should attach the `tidyverse` and`palmerpenguins` package in your .qmd setup chunk if you haven\'t already. Update labels and add a title.
+
+-   In a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See ?geom_jitter
+
+-   Render your .qmd to check for reproducibility
+
+-   Stage, commit, and push changes to the remote repo. Once you do, go to GitHub and check to see the changes are safely stored & tracked.
+
+-   Go back to your Quarto document in RStudio. Pull to make sure you have the same versions as in the remote repo. Make a change (anything you want - maybe change your graph colors, sizes, etc.), then stage, commit, & push changes to the remote repo to reinforce the steps. Check that changes are stored on GitHub.
+
+-   Repeat two more times - make changes to your plot, knit, stage, commit & push. Check that your changes appear on GitHub.
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+
+ggplot(data.frame(penguins), aes(x = bill_length_mm, 
+                                 y = bill_depth_mm, 
+                                 color = species)) +
+  geom_point() + labs(title = "Penguins bill length versus bill depth", 
+                      x = "Bill length, mm", 
+                      y = "Bill depth, mm")
+  
+```
+
+-   In a new code chunk, make a jitter plot of flipper length by species (species on the x-axis, flipper length on the y-axis). Update axis labels and add a title. See ?geom_jitter
+
+```{r}
+
+ggplot(data.frame(penguins), aes(x = species, 
+                                 y = flipper_length_mm, 
+                                 color = species)) +
+  geom_jitter() + labs(title = "Penguins flipper length by species", 
+                      x = "Penguine species", 
+                      y = "Flipper Length, mm")
+```
