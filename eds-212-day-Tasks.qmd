@@ -1,0 +1,8 @@
+---
+title: "eds-212-day-Tasks"
+---
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+```
