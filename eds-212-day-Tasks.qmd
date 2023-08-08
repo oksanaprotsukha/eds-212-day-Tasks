@@ -6,3 +6,25 @@ title: "eds-212-day-Tasks"
 library(tidyverse)
 library(palmerpenguins)
 ```
+
+-   In your Quarto document, find the derivative expression and slope at the indicated value for each the following functions in R (each in a separate code chunk).
+
+    1.  Find the slope of f(x)=x2 at x=3
+
+    2.  Find the slope of P(a)=2(3a+2)4−5 at a=1.2
+
+```{r}
+fx = D(expression(x ^ 2), "x")
+x <- 3
+
+eval(fx)
+```
+
+```{r}
+# P(a)=2(3a+2)^4 -5 at a = 1.2
+
+fx = D(expression(2 * (3 * a + 2)^4 - 5), "a")
+a <- 1.2
+
+eval(fx)
+```
